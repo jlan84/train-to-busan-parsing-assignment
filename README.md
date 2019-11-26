@@ -1,5 +1,5 @@
-If you are using your home computer, read these [notes on what to install](https://github.com/zipfian/DSI_Lectures/tree/master/python-intro/notes/computer_setup.md).
+This is the DSI's Python Introduction.  You'll be learning efficiency tips, practicing Pythonic code, and getting experience writing a few unittests.  
 
-Here are some [lecture notes](https://github.com/zipfian/DSI_Lectures/tree/master/python-intro/notes/notes.md) which contain information on python data structures, built-ins and other advanced topics as well as ipython.
+To review `git` collaboration, the assignment should be done as a pair.
 
-Here is the [day one assignment](pair.md).
+The [assignment](assignment.md) asks you to write functions using Pythonic syntax and write tests for those functions using Python's unittest module.

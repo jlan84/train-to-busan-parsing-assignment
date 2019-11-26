@@ -26,7 +26,7 @@ def find_new_words(f, word_dict):
     words = []
     for line in f:
         for word in line.strip().split():
-            if word not in word_dict.keys():
+            if word not in list(word_dict.keys()):
                 words.append(word)
     return words
 
@@ -62,4 +62,4 @@ def find_high_valued_words(word_dict, value):
     Return the items from word_dict whose values are larger than value.
     """
 
-    return [key for key, val in word_dict.items() if val > value]
+    return [key for key, val in list(word_dict.items()) if val > value]

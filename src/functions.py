@@ -1,5 +1,5 @@
 from collections import Counter
-from itertools import izip, count
+from itertools import count
 
 
 def write_to_file(lst, f):
@@ -39,7 +39,7 @@ def merge_files(f1, f2, out):
     cat,mouse
     dog,rabbit
 
-    Hint: Use izip
+    Hint: Use zip
     """
 
     pass
@@ -57,7 +57,7 @@ def key_in_value(d):
     INPUT: {"a": ["b", "c", "a"], "b": ["a", "c"], "c": ["c"]}
     OUTPUT: ["a", "c"]
 
-    Hint: Use iteritems
+    Hint: Use items
     (Can be done on one line with a list comprehension)
     """
 
