@@ -131,5 +131,5 @@ statements and the main block (`if __name__ == '__main__':`) should be outside o
 using `sys.argv`). Look at the [documentation](https://docs.python.org/3/howto/argparse.html) 
 to figure out how to use it.
 3. Use a `defaultdict` for storing all the restaurant reviews.
-4. For extra credit, use the `re` module for parsing the line ([documentation](https://docs.python.org/3/library).
+4. For extra credit, use the `re` module for parsing the line ([documentation](https://docs.python.org/3/library/re.html)).
 5. You can compare your result to ours with: `diff out.csv example_out.csv`
