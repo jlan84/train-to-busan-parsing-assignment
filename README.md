@@ -1,5 +1,7 @@
-This is the DSI's Python Introduction.  You'll be learning efficiency tips, practicing Pythonic code, and getting experience writing a few unittests.  
+This is the DSI's Python Introduction.  You'll learn efficiency tips, practice 
+Pythonic code, and get experience using the Python debugger and unittest modules.  
 
-To review `git` collaboration, the assignment should be done as a pair.
+To review `git` collaboration, do the assignment as a pair.
 
-The [assignment](assignment.md) asks you to write functions using Pythonic syntax and write tests for those functions using Python's unittest module.
+The [assignment](assignment.md) asks you to write functions using Pythonic syntax 
+and write tests for those functions using Python's unittest module.

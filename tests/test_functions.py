@@ -34,7 +34,7 @@ class TestFunctions(unittest.TestCase):
 
     def test_most_common_letters(self):
         # incomplete test
-        str_to_test = "abb bbdddc cdcdc"
+        str_to_test = "aBb bbdDDc cdCdc"
         self.fail("No checks in test")        
 
     def test_merge_dictionaries(self):
@@ -45,7 +45,7 @@ class TestFunctions(unittest.TestCase):
         d2_copy = d2.copy()
         # three checks are required:
         # 1) was d1 changed?
-        # 2) was d2 changes?
+        # 2) was d2 changed?
         # 3) is the result you get after the merger correct?
         self.fail("No checks in test")  # get rid of this after you've written your tests
 

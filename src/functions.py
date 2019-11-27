@@ -1,6 +1,4 @@
 from collections import Counter
-from itertools import count
-
 
 def write_to_file(lst, f):
     """
@@ -14,11 +12,10 @@ def write_to_file(lst, f):
     2 b
     3 c
 
-    Hint: Use enumerate for cleaner code
+    Hint: Use enumerate for cleaner code, and the file is already open
+    (you don't need to open the file in the function, just write to it.)
     """
-
     pass
-
 
 def merge_files(f1, f2, out):
     """
@@ -28,7 +25,7 @@ def merge_files(f1, f2, out):
     f1 and f2 are two files with the same number of lines. Merge the contents
     together, separated with a comma.
 
-    INPUT FILES:
+    INPUT FILES :
     cat
     dog
 
@@ -39,11 +36,10 @@ def merge_files(f1, f2, out):
     cat,mouse
     dog,rabbit
 
-    Hint: Use zip
+    Hint: Use zip, and note that the files are already open, you just need to 
+    read them and write to the out file.
     """
-
     pass
-
 
 def key_in_value(d):
     """
@@ -60,29 +56,25 @@ def key_in_value(d):
     Hint: Use items
     (Can be done on one line with a list comprehension)
     """
-
     pass
-
 
 def most_common_letters(sentence):
     """
     INPUT: string
-    OUTPUT: list of strings
+    OUTPUT: string
 
     Given a sentence, give the most common letter for each word.
     You should lowercase the letters. If there's a tie, include any of them.
 
     example:
     INPUT: "Welcome to Zipfian Academy!"
-    OUTPUT: 'e t i a'
+    OUTPUT: "e t i a"
 
     Hint: use Counter and the string join method
     (It is possible to do this in one line, but you might lose some
     readability)
     """
-
     pass
-
 
 def merge_dictionaries(d1, d2):
     """
@@ -96,5 +88,4 @@ def merge_dictionaries(d1, d2):
     Create a new dictionary that contains all the key, value pairs from d1 and
     d2. If a key is in both dictionaries, sum the values.
     """
-
     pass

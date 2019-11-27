@@ -61,10 +61,10 @@ In [1]: import pickle
 
 In [2]: import efficiency
 
-In [3]: word_dict = pickle.load(open("data/word_dict.pkl","rb"))
+In [3]: word_dict = pickle.load(open("../data/word_dict.pkl","rb"))
 
-In [4]: timeit efficiency.find_new_words(open("data/alice.txt"), word_dict)
-1 loops, best of 3: 21 s per loop
+In [4]: timeit efficiency.find_new_words(open("../data/alice.txt"), word_dict)
+10.3 s ± 626 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 ```
 
 Whenever you change the code in `efficiency.py` make sure to run this command 
@@ -120,7 +120,7 @@ You can see an example output in `example_out.csv`.
 You should write a python script which can be run on the command line like this:
 
 ```shell
-python script.py data/reviews1.txt data/reviews2.txt out.csv
+python src/script.py data/reviews1.txt data/reviews2.txt out.csv
 ```
 
 Notes:
