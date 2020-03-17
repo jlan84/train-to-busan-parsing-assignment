@@ -6,7 +6,6 @@ objectives associated with Python:
 * Properly import functions from a helper script into a main script.
 * Demonstrate the usefulness of the `if __name__ == "__main__":` block.
 * Use the standard library debugger (pdb) to debug Python code as it executes.
-* Use the `unittest` module to write and test a function.
 * Use the `ArgumentParser` to pass arguments to a script at execution.
 
 The assignment also has objectives associated with your Python workflow:

@@ -46,14 +46,13 @@ As you can see, `train_to_busan.txt` is a line-by-line transcription of the
 * all the text has been lower-cased
 * punctuation has been removed
 * words that are common (e.g "at", "the", "for") have been removed
-* words have been _lemmatized_, i.e. taken to their root form: running -> run, plural -> singular
 * people's names have been replaced with "person"
 
 This assigment will walk you through creating this application.
 
 ## Part 1 - Explore the data (and Introduction to Jupyter Notebooks)  
 
-Before jumping to making the application we should first get a sense for what our
+Before jumping to making the application we should first get a sense for what the 
 data are like.  In this case, you can simply navigate to the text file and read it
 using the command line utility `less`.  Try it:  
 ```bash
@@ -64,11 +63,50 @@ But let's it explore it in a more quantitative way using Python.  Data explorati
 is a perfect use-case for Jupyter Notebooks.
 
 ### Jupyter Notebooks
-A Jupyter Notebook is an Interactive Python environment inspired by blah blah
-blah blah blah
+As described in the [Jupyter Notebook Quickstart Guide](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html):
+> Jupyter Notebook documents (or “notebooks”, all lower case) are documents produced by 
+> the Jupyter Notebook App, which contain both computer code (e.g. Python) and 
+> rich text elements (paragraph, equations, figures, links, etc…). Notebook 
+> documents are both human-readable documents containing the analysis description 
+> and the results (figures, tables, etc..) as well as executable documents which 
+> can be run to perform data analysis. 
 
+Jupyter Notebooks run the IPython interactive kernel in "Code" cells, but then allow for 
+text formatting and use of sophisticated Latex rendering using MathJax (see these [examples](https://www.tuhh.de/MathJax/test/sample.html)) in "Markdown" cells.  This makes them a good candidate for
+Python lectures to technical audiences.
+
+One distinguishing characteristic of Jupyter Notebooks is that code is executed in cells.
+Therefore you can execute a bit of code, and then in the next or (_horror_) preceding cell
+query the results of code execution.
+
+Jupyter Notebooks are also visually-pleasing graphical environments.  Plots show up naturally.
+
+Their non-linear, iterative, cellular, and visual nature make Jupyter Notebooks a powerful
+tool for rapid data exploration and visualization.  However, these same characteristics (as
+well as poor git tracking/merging) sabotage their use as a way to create a sequential operating
+script executable from the command line.
+
+Very often an project will start with exploration in a Jupyter Notebook but end with an
+application deployed as a script.
+
+Let's demonstrate the use of a Jupyter Notebook to explore the `train_to_busan_description.txt`
+file.  In Terminal, navigate to the `notebooks` folder of this repository.  Once inside,
+open the Jupyter notebook inside and execute cell-by-cell sequentially using `shift-enter`,
+carefully reading the comments and observing the syntax along the way.  Don't be afraid to add
+cells and perform your own exploration and analysis.
+
+Here's how you open a Jupyter Notebook from the command line:  
+```bash
+$ jupyter notebook explore_movie_description.ipynb
+```
+
+You know a file is Jupyter Notebook from its `*.ipynb` file extension.
 
 ## Part 2 - Fill in the `text_parsing_functions.py` functions  
+
+Now that you've explored the text and gained some familiarity with functions (in the
+Jupyter Notebook) that could be used to clean it, let's transition to writing scripts for
+the application.
 
 The `description_parser.py` file will need text parsing functions to condense
 the movie descriptions.  These functions _could_ be written in the `description_parser.py` 
