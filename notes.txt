@@ -1,0 +1,42 @@
+Intro says you'll learn efficiency tips, practice Pythonic code, get experience using debugger and unittest modules.
+
+Assignment:
+1. Fill in functions 
+It's about about proper data structures for the job.  Introduces the idea that "right answers"
+have already been written for you, and that you'll need to fill in a test function.
+
+Also introduces the debugger.  Also gives pdb commands.  Also introduces pycodestyle
+Doesn't have them do anything with either.
+
+2. Efficiency
+Refactor poorly written code.
+
+
+
+What it doesn't do:
+Introduce directory structure
+Introduce text editor/ipython/terminal work environment
+Introduce jupyter notebook
+
+Where data is coming from:
+https://www.kaggle.com/jrobischon/wikipedia-movie-plots/
+
+Overview of assignment:
+have two files:
+text_cleaning_functions.py
+textparser.py
+
+textparser.py will import functions form text_cleaning_functions.py
+
+goal: take a text file and parse it to create two files:
+a) a file that has cleaned versions of each line in it
+b) another file that is simply the count of words in that line
+
+general plan:
+read in all the words - make a vocabulary (what data structure should it be)
+remove stop words - how best to do that?
+sort it and display it - how to do that?  
+replace similar words with an identical word - how to do that?
+
+show functions, INEMB, importing, use debugger, use unittest
+

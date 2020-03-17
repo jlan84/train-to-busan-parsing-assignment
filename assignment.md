@@ -1,5 +1,86 @@
-# Python Assignment
+# Assignment overview
 
+You're tasked with creating a text pre-processing pipeline for movie description 
+clustering.  Your script should read in a movie description and write a condensed 
+version that will be the input for another script that clusters the movie descriptions.  You 
+aren't responsible for creating the clustering script.
+
+Let's make the assignment more specific using an example. The `data` folder 
+contains a Wikipedia movie description of the 2016 South Korean thriller  
+**Train to Busan**.  The description is in the text file `train_to_busan_description.txt`.
+
+<p align="center">
+    <img width="300" src="./images/train_to_busan_poster.png">
+</p>
+
+<p align="center">source: Wikipedia</p>
+
+You will create a script `src/description_parser.py` that takes as an input 
+argument a text file (in this case `data/train_to_busan_description.txt`)
+and writes a condensed version of the text file as output (in this case `parsed/train_to_busan.txt`).
+Note that the three files mentioned above exist in different directories, as indicated
+by the text preceding the forward slash:  
+* `src/`  The source directory where Python scripts (`*.py`) are stored.  
+* `data/` The directory where the text descriptions (`*.txt`) are stored.
+* `parsed/` The directory where parsed text versions (`*.txt`) of the movie descriptions will be stored.
+            Your script will create this directory if it doesn't already exist.
+
+The script needs to run from Terminal (the command line) in the root directory of the project like so:  
+```bash
+$ python src/description_parser.py data/train_to_busan_description.txt  
+```
+
+This results in the creation of `parsed/train_to_busan.txt`. Showing just the first
+three lines, the images below shows how your `src/description_parser.py` should tranform the 
+text from the description to the parsed version.
+
+`data/train_to_busan_description.txt`  
+![image][image]
+
+`parsed/train_to_busan.txt`  
+![image][image]
+
+As you can see, `train_to_busan.txt` is a line-by-line transcription of the 
+`train_to_busan_description.txt` but with the following modifications:
+* it's in a different directory (`parsed` instead of `data`)
+* all the text has been lower-cased
+* punctuation has been removed
+* words that are common (e.g "at", "the", "for") have been removed
+* words have been _lemmatized_, i.e. taken to their root form: running -> run, plural -> singular
+* people's names have been replaced with "person"
+
+This assigment will walk you through creating this application.
+
+## Part 1 - Explore the data (and Introduction to Jupyter Notebooks)  
+
+Before jumping to making the application we should first get a sense for what our
+data are like.  In this case, you can simply navigate to the text file and read it
+using the command line utility `less`.  Try it:  
+```bash
+$ less train_to_busan_description.txt
+```
+
+But let's it explore it in a more quantitative way using Python.  Data exploration
+is a perfect use-case for Jupyter Notebooks.
+
+### Jupyter Notebooks
+A Jupyter Notebook is an Interactive Python environment inspired by blah blah
+blah blah blah
+
+
+## Part 2 - Fill in the `text_parsing_functions.py` functions  
+
+The `description_parser.py` file will need text parsing functions to condense
+the movie descriptions.  These functions _could_ be written in the `description_parser.py` 
+file itself, but these text parsing functions could be useful in other applications too.
+So let's develop and test the text parsing functions in a separate script - `text_parsing_functions.py` -
+and then once they are working as desired _import_ them into the `description_parser.py` file 
+for use.
+
+1.  One
+
+Goal: Write a Python application that takes a text file as an argument and parses
+it line-by-line into text tokens of interest.  As the
 The goal of this assignment is to familiarize you with advanced Python 
 features so that you can write cleaner, more efficient code.
 

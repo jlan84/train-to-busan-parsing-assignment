@@ -1,7 +1,18 @@
-This is the DSI's Python Introduction.  You'll learn efficiency tips, practice 
-Pythonic code, and get experience using the Python debugger and unittest modules.  
+This is the DSI's Python Introduction.  The assignment has the following
+objectives associated with Python:
+* Create a simple application executable from the Terminal.
+* Choose the appropriate data structure (list, dictionary, or set) for the task at hand.
+* Read and write files.
+* Properly import functions from a helper script into a main script.
+* Demonstrate the usefulness of the `if __name__ == "__main__":` block.
+* Use the standard library debugger (pdb) to debug Python code as it executes.
+* Use the `unittest` module to write and test a function.
+* Use the `ArgumentParser` to pass arguments to a script at execution.
 
-To review `git` collaboration, do the assignment as a pair.
+The assignment also has objectives associated with your Python workflow:
+* Introduce and practice your primary work environment: text editor, IPython console,  and Terminal.
+* Introduce and practice Jupyter Notebooks.
+* Discuss appropriate use of text editor/IPython/Terminal vs. Jupyter Notebooks.
+* Use `git` to back-up changes to your code as you work on the assignment.
 
-The [assignment](assignment.md) asks you to write functions using Pythonic syntax 
-and write tests for those functions using Python's unittest module.
+Here's the [assignment](assignment.md).
