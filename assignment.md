@@ -6,7 +6,7 @@ version that will be the input for another script that clusters the movie descri
 aren't responsible for creating the clustering script.
 
 Let's make the assignment more specific using an example. The `data` folder 
-contains a Wikipedia movie description of the 2016 South Korean thriller  
+contains a Wikipedia movie description of the 2016 South Korean thriller 
 **Train to Busan**.  The description is in the text file `train_to_busan_description.txt`.
 
 <p align="center">
