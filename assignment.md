@@ -23,11 +23,11 @@ by the text preceding the forward slash:
 * `src/`  The source directory where Python scripts (`*.py`) are stored.  
 * `data/` The directory where the text descriptions (`*.txt`) are stored.
 * `parsed/` The directory where parsed text versions (`*.txt`) of the movie descriptions will be stored.
-            Your script will create this directory if it doesn't already exist.
+            
 
 The script needs to run from Terminal (the command line) in the root directory of the project like so:  
 ```bash
-$ python src/description_parser.py data/train_to_busan_description.txt  
+$ python src/description_parser.py -i data/train_to_busan_description.txt -o parsed/train_to_busan.txt 
 ```
 
 This results in the creation of `parsed/train_to_busan.txt`. Showing just the first
@@ -35,10 +35,10 @@ three lines, the images below shows how your `src/description_parser.py` should 
 text from the description to the parsed version.
 
 `data/train_to_busan_description.txt`  
-![image][image]
+<img width="600" src="./images/three_lines_in.png">
 
 `parsed/train_to_busan.txt`  
-![image][image]
+<img width="600" src="./images/three_lines_out.png">
 
 As you can see, `train_to_busan.txt` is a line-by-line transcription of the 
 `train_to_busan_description.txt` but with the following modifications:
@@ -108,6 +108,28 @@ Now that you've explored the text and gained some familiarity with functions (in
 Jupyter Notebook) that could be used to clean it, let's transition to writing scripts for
 the application.
 
+This work environment requires a text editor and two Terminals.  They all should be set 
+to run from the project's root directory.  You can get set-up by navigating to the 
+repository from Terminal, then using VSCode to open the project, then opening up
+another Terminal in the same location and executing IPython.  For example:
+
+```bash
+$ cd ~/galvanize/repos/python-intro
+$ code .
+```
+Note the space then period (.) after code above.  The period signifies the current
+directory (we're inside `python-intro` so open up VSCode inside this repository).
+
+Switch back to Terminal using `Alt + Tab` (Linux) or `Command + Tab` (Mac) then use
+a shortcut to open another Terminal in the same location: `Ctrl + Shift + t` (Linux) or
+`Command + t` (Mac).  In that Terminal, start IPython:  
+```bash
+$ ipython
+```
+
+As long as you don't have any other applications besides a web browser running (and why would you?!?), you can now easily switch between your text editor and Terminals using `Alt` or `Command + Tab`.
+Note that [VSCode also has an integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). You may want to start IPython there instead.  
+
 The `description_parser.py` file will need text parsing functions to condense
 the movie descriptions.  These functions _could_ be written in the `description_parser.py` 
 file itself, but these text parsing functions could be useful in other applications too.
@@ -115,140 +137,110 @@ So let's develop and test the text parsing functions in a separate script - `tex
 and then once they are working as desired _import_ them into the `description_parser.py` file 
 for use.
 
-1.  One
+`text_parsing_functions.py` has been started for you.  It's in the `src` folder.
+1. Fill in the functions in `text_parsing_functions.py`, starting from the top.  Make sure you return values from the functions, and delete `pass` as you do. Test them as you go by calling the functions
+given the provided test strings under the `# your code below` comment.  
+purposes.  
 
-Goal: Write a Python application that takes a text file as an argument and parses
-it line-by-line into text tokens of interest.  As the
-The goal of this assignment is to familiarize you with advanced Python 
-features so that you can write cleaner, more efficient code.
-
-## Part 1: Fill in some functions
-
-Fill in the functions in `src/functions.py` according to their docstrings. Some 
-"right answers" for these functions have already been written for you in 
-`tests/test_functions.py`. You should complete the functions in 
-`src/functions.py` so that they pass the tests, and you should complete the 
-function tests (some are incomplete) in `tests/test_functions.py`.
-
-You can test your functions in `src/functions.py` using the tests written in 
-`tests/test_functions.py` using the `unittest` module.
-
-Here's how:
-```shell
-$ python -m unittest -v tests/test_functions.py
+We recommend that you run this script from within the IPython interactive console, so that you can query values in IPython after executing the script: 
+```python
+In [1]: run src/text_parsing_functions.py
 ```
+## Part 3 - Try out the Python Standard Library Debugger (PDB)
 
-Are you writing Pythonic code?  Check your style according to pep8 guidelines:
-
-```shell
-$ pycodestyle functions.py
-```
-
-Sometimes debugging code can be challenging.  One way to debug code is the 
-[Python Debugger](https://docs.python.org/3/library/pdb.html).  As described
-in this [Real Python blog](https://realpython.com/python-debugging-pdb/) one
-of the easiest way to implement the debugger is to insert `breakpoint()` into
-your code immediately above the code you're having trouble with.
-
-Once you're entered the debugger, [here](https://realpython.com/python-debugging-pdb/#essential-pdb-commands)
-is a list of useful debugger commands.  If you're having difficulty with the
-debugger please ask an instructor.  The debugger can make the rest of the
-course much easier for you!
-
-## Part 2: Efficiency
-
-The file `src/efficiency.py` contains some poorly written code. It works 
-correctly, but it could be made more efficient.
-
-Run and time each function.  We've created the data for you in the `data` folder. 
-The `word_dict` is saved as a pickle object, which is a way of saving a Python 
-object so you can reload it easily.
-
-There are two data files, `alice.txt` and `articles.txt`. We recommend testing 
-with `alice.txt` first as it's smaller and most of the inefficient code will 
-take an unreasonably long time on the larger file (though you can verify this 
-for yourself and just do Ctrl-C when you're ready to give up). After you make 
-the code more efficient, try it with the larger file.
-
-We're also going to be using `timeit` to get a measure of how long the function 
-takes.
-
-Here's how to execute and time a function in IPython:
+Sometimes you'd like to be able to check values in functions or classes as your code executes.  Python provides a simple way to do that using the Python debugger (pdb).  As shown below, insert a `breakpoint()` into your `line_cleaning_pipeline` and execute your code.  You will be dropped into the debugger at
+the `breakpoint()` where you can query values after a given line has been run.  `n` executes the current line of code.  Try it out.
 
 ```python
-In [1]: import pickle
-
-In [2]: import efficiency
-
-In [3]: word_dict = pickle.load(open("../data/word_dict.pkl","rb"))
-
-In [4]: timeit efficiency.find_new_words(open("../data/alice.txt"), word_dict)
-10.3 s ± 626 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+def line_cleaning_pipeline(text, stopwords_set, name_set, replace_val):
+    breakpoint() 
+    text_lc = lowercase_text(text)
+    text_np = remove_punctuation(text_lc)
+    text_nnl = remove_newline(text_np)
+    words = split_text_into_words(text_nnl)
+    words_nsw = remove_stopwords(words, stopwords_set)
+    words_cleaned = replace_names(words_nsw, name_set, replace_val) 
+    line_of_text_cleaned = create_cleaned_textline_from_words(words_cleaned)
+    return line_of_text_cleaned
 ```
+After entering the debugger, to see if `text_lc` evaluated correctly type `n` which evaulates the line and then type `text_lc` to see what its value is.  
 
-Whenever you change the code in `efficiency.py` make sure to run this command 
-in IPython:
+An especially valuable use of the debugger is to insert a `breakpoint()` on a line immediately
+before you have code that gives you some kind of execuation error.  You'll be able to query
+variables (like you did with `text_lc` above) to see if they contain the values you think they do!
+
+`q` quits the debugger.
+
+Delete the `breakpoint()` when you no longer need it.
+
+## Part 4 - Create and fill out the `description_parser.py`
+
+Now that we have line-cleaning functions in `text_parsing_functions.py` let's import
+those functions into another file so that file can use them.
+
+2. Make a `description_parser.py` file in the `src` directory, and add the following lines
+to it.
 
 ```python
-In [5]: import importlib
+from string import punctuation
+from sklearn.feature_extraction import stop_words
+stopwords = stop_words.ENGLISH_STOP_WORDS
 
-In [6]: importlib.reload(efficiency)
+import text_parsing_functions as tpf
+
+
+if __name__ == '__main__':
+    replace = 'person'
+    names = set(['suan', 'seongkyeong', 'yonsuk', 'seokwoo', 'ingil', 'yonghuk'
+                 'jinhee'])
+    line_text = "pregnant wife Seong-kyeong, a high school baseball team, rich-yet-egotistical" 
+    cleaned_text = tpf.line_cleaning_pipeline(line_text, stopwords, names, replace)
+    print(cleaned_text)
 ```
 
-For `list_of_words` and `find_new_words` you should be able to get a *big* 
-improvement with a minor change. For `get_average_score` and `find_high_valued_words` 
-the speedup will be less impressive.
+Note now that this script import functions from the `text_parsing_functions.py` script and
+that they are accessed using the prefix `tpf.` which we assigned.
 
-**For each function, do the following:**
-
-1. Run `timeit` to get a measure of how well the original version does. Make note of this value.
-2. Make your change to the file.
-3. Run `timeit` again and make note of the improved runtime.
-4. Write a comment next to each function with the runtime speedup and explain why your version is faster.
-
-**These are all very small changes and may be tricky to spot. If you can't find the issue in 5-10 minutes, ask a neighbor or instructor for a hint.**
-
-
-## Extra credit: A Python Script
-
-You are given two files which contain reviews from two different sources. The files are in the `data` folder: `reviews1.txt` and `reviews2.txt`.
-
-Take a look at the data. In the command line, this is especially useful if you have large files:
-
-```shell
-head data/reviews1.txt
+Execute this code.  You may do it from the IPython console, or you may execute it directly
+from Terminal:
+```bash
+$ python src/description_parser.py
 ```
 
-Or even just look at the first line:
 
-```shell
-head -n 1 data/reviews 1.txt
+3. `description_parser.py` needs to read in a file line-by-line and pass each line to the
+line-cleaning-pipeline. Using the **With Statement** construction in this [blog](https://www.geeksforgeeks.org/read-a-file-line-by-line-in-python/), add a function to `description_parser.py` that takes
+a filepath, opens it, and prints out each line.  Add
+```python
+filepath = 'data/train_to_busan_description.csv'
+```
+under your `if __name__ == '__main__':` block (INEMB).
+
+If it doens't work don't forget about the debugger!
+
+4. Now refactor your function that reads and print all the lines in a file to take
+each line, clean it, and then print it out.  If that works, then refactor your code
+to return one large list instead, where each element in the list is one cleaned line
+of text.
+
+5. Once that's working, once consult this [Stack Overflow Answer](https://stackoverflow.com/questions/7138686/how-to-write-a-list-to-a-file-with-newlines-in-python3) to learn how to write each element of a list
+to a file.  Write to the `parsed` directory in the project.  Remember to specify `parsed/train_to_busan.txt`
+as the path to write to.  For now put that path in your `description_parser.py` under the INEMB.
+
+
+6. Finally, we'd rather not hard-code paths into our code.  We'd rather make it extensible to be
+able take other files and paths from the command line.  This [Stack Overflow Post](https://stackoverflow.com/questions/7033987/python-get-files-from-command-line) succinctly describes how to use ArgumentParser
+to get these arguments from the command line.
+
+<p align="center">
+    <img width="500" src="./images/argparse_example.png">
+</p>
+
+Implement ArgumentParser so that you can execute your code like this:
+```bash
+$ python src/description_parser.py -i data/train_to_busan_description.txt -o parsed/train_to_busan.txt 
 ```
 
-The line `il-Yamo   5` means that restaurant `Yamo` was given a rating of `5` 
-by user `il`. Don't read too much into the review values, this was randomly 
-generated "data". All of the places are local favorites :)
+Consult the Python documentation to learn more about ArgumentParser.
 
-You would like to know for each restaurant their average rating from each source. 
-You will create a file with lines like this: `yamo,3.25,2.2`. The lines should 
-be in *sorted order*. Make sure that you match the names even if their 
-capitalization isn't the same. If a restaurant is in one file, but not the other, 
-you should still include it and give a reasonable value for the missing number. 
-You can see an example output in `example_out.csv`.
-
-You should write a python script which can be run on the command line like this:
-
-```shell
-python src/script.py data/reviews1.txt data/reviews2.txt out.csv
-```
-
-Notes:
-
-1. Use functions to make your code clean and easy to read. Nothing besides import 
-statements and the main block (`if __name__ == '__main__':`) should be outside of functions.
-2. Use the `argparse` module for getting input (it's a little cleaner than just 
-using `sys.argv`). Look at the [documentation](https://docs.python.org/3/howto/argparse.html) 
-to figure out how to use it.
-3. Use a `defaultdict` for storing all the restaurant reviews.
-4. For extra credit, use the `re` module for parsing the line ([documentation](https://docs.python.org/3/library/re.html)).
-5. You can compare your result to ours with: `diff out.csv example_out.csv`
+Congratulations!  You may have just written your first Python application! 
