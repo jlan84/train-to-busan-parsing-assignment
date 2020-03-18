@@ -86,7 +86,7 @@ tool for rapid data exploration and visualization.  However, these same characte
 well as poor git tracking/merging) sabotage their use as a way to create a sequential operating
 script executable from the command line.
 
-Very often an project will start with exploration in a Jupyter Notebook but end with an
+Very often a project will start with exploration in a Jupyter Notebook but end with an
 application deployed as a script.
 
 Let's demonstrate the use of a Jupyter Notebook to explore the `train_to_busan_description.txt`
