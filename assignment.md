@@ -31,7 +31,7 @@ $ python src/description_parser.py -i data/train_to_busan_description.txt -o par
 ```
 
 This results in the creation of `parsed/train_to_busan.txt`. Showing just the first
-three lines, the images below shows how your `src/description_parser.py` should tranform the 
+three lines, the images below shows how `src/description_parser.py` should tranform the 
 text from the description to the parsed version.
 
 `data/train_to_busan_description.txt`  
@@ -52,14 +52,14 @@ This assigment will walk you through creating this application.
 
 ## Part 1 - Explore the data (and Introduction to Jupyter Notebooks)  
 
-Before jumping to making the application we should first get a sense for what the 
-data are like.  In this case, you can simply navigate to the text file and read it
-using the command line utility `less`.  Try it:  
+Before making the application let's first get a sense for what the data are like.  
+In this case, you can simply navigate to the text file and read it using the command 
+line utility `less`.  Try it:  
 ```bash
 $ less train_to_busan_description.txt
 ```
 
-But let's it explore it in a more quantitative way using Python.  Data exploration
+But let's it explore it more quantitatively using Python.  Data exploration
 is a perfect use-case for Jupyter Notebooks.
 
 ### Jupyter Notebooks
@@ -166,7 +166,7 @@ def line_cleaning_pipeline(text, stopwords_set, name_set, replace_val):
 After entering the debugger, to see if `text_lc` evaluated correctly type `n` which evaulates the line and then type `text_lc` to see what its value is.  
 
 An especially valuable use of the debugger is to insert a `breakpoint()` on a line immediately
-before you have code that gives you some kind of execuation error.  You'll be able to query
+before you have code that gives you some kind of execution error.  You'll be able to query
 variables (like you did with `text_lc` above) to see if they contain the values you think they do!
 
 `q` quits the debugger.
@@ -216,7 +216,7 @@ filepath = 'data/train_to_busan_description.csv'
 ```
 under your `if __name__ == '__main__':` block (INEMB).
 
-If it doens't work don't forget about the debugger!
+If it doesn't work don't forget about the debugger!
 
 4. Now refactor your function that reads and print all the lines in a file to take
 each line, clean it, and then print it out.  If that works, then refactor your code
