@@ -17,7 +17,7 @@ def lowercase_text(text):
     Examples
     --------
     >>> lowercase_text('AbC')
-   'abc'
+    'abc'
     '''
     return text.lower()
 
