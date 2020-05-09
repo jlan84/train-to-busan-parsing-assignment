@@ -140,7 +140,6 @@ for use.
 `text_parsing_functions.py` has been started for you.  It's in the `src` folder.
 1. Fill in the functions in `text_parsing_functions.py`, starting from the top.  Make sure you return values from the functions, and delete `pass` as you do. Test them as you go by calling the functions
 given the provided test strings under the `# your code below` comment.  
-purposes.  
 
 We recommend that you run this script from within the IPython interactive console, so that you can query values in IPython after executing the script: 
 ```python
