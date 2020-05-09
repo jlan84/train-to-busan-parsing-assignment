@@ -19,7 +19,7 @@ def lowercase_text(text):
     >>> lowercase_text('AbC')
    'abc'
     '''
-    pass
+    return text.lower()
 
 
 def remove_punctuation(text, punctuation=punctuation):
@@ -162,3 +162,7 @@ if __name__ == '__main__':
     text_str3 = "to take her to Busan to see her mother. \nThey board the KTX at Seoul Station."
 
     # your code below
+    text = text_str1
+    text_lc = lowercase_text(text)
+    print(f"Original: {text}")
+    print(f"Lowercased: {text_lc}.")
