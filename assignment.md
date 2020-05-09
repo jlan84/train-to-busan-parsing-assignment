@@ -223,7 +223,7 @@ each line, clean it, and then print it out.  If that works, then refactor your c
 to return one large list instead, where each element in the list is one cleaned line
 of text.
 
-5. Once that's working, once consult this [Stack Overflow Answer](https://stackoverflow.com/questions/7138686/how-to-write-a-list-to-a-file-with-newlines-in-python3) to learn how to write each element of a list
+5. Once that's working, consult this [Stack Overflow Answer](https://stackoverflow.com/questions/7138686/how-to-write-a-list-to-a-file-with-newlines-in-python3) to learn how to write each element of a list
 to a file.  Write to the `parsed` directory in the project.  Remember to specify `parsed/train_to_busan.txt`
 as the path to write to.  For now put that path in your `description_parser.py` under the INEMB.
 
