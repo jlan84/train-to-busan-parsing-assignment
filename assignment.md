@@ -183,8 +183,8 @@ to it.
 
 ```python
 from string import punctuation
-from sklearn.feature_extraction import stop_words
-stopwords = stop_words.ENGLISH_STOP_WORDS
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+stopwords = ENGLISH_STOP_WORDS
 
 import text_parsing_functions as tpf
 
