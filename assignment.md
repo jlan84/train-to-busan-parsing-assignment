@@ -72,7 +72,7 @@ As described in the [Jupyter Notebook Quickstart Guide](https://jupyter-notebook
 > can be run to perform data analysis. 
 
 Jupyter Notebooks run the IPython interactive kernel in "Code" cells, but then allow for 
-text formatting and use of sophisticated Latex rendering using MathJax (see these [examples](https://www.tuhh.de/MathJax/test/sample.html)) in "Markdown" cells.  This makes them a good candidate for
+text formatting and use of sophisticated Latex rendering using MathJax (see these [examples](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html)) in "Markdown" cells.  This makes them a good candidate for
 Python lectures to technical audiences.
 
 One distinguishing characteristic of Jupyter Notebooks is that code is executed in cells.
