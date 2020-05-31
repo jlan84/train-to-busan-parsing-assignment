@@ -40,7 +40,7 @@ def remove_punctuation(text, punctuation=punctuation):
     >>> remove_punctuation("here's johnny!")
     'heres johnny'
     '''
-    pass 
+    pass
 
 
 def remove_newline(text):
@@ -59,7 +59,7 @@ def remove_newline(text):
     >>> remove_newline("\nlife happens when youre busy\n making other plans\n")
     'life happens when youre busy making other plans'
     '''
-    pass 
+    pass
 
 
 def split_text_into_words(text):
@@ -78,7 +78,7 @@ def split_text_into_words(text):
     >>> split_text_into_words("get started by stop talking and begin doing")
     ['get', 'started', 'by', 'stop', 'talking', 'and', 'begin', 'doing']
     '''
-    pass 
+    pass
 
 
 def remove_stopwords(word_lst, stopwords_set):
@@ -98,12 +98,12 @@ def remove_stopwords(word_lst, stopwords_set):
     >>> remove_stopwords(['tell', 'me', 'and', 'i', 'forget'], set(['and', 'i']))
     ['tell', 'me', 'forget']
     '''
-    pass 
+    pass
 
 
 def replace_names(word_lst, name_set, replacement_val):
-    '''Replaces names in word_lst with replacement_val.  Names are identified in
-    the name set.
+    '''Replaces names in word_lst with replacement_val.
+    Names are identified in the name set.
 
     Parameters
     ----------
