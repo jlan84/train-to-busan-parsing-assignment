@@ -172,6 +172,8 @@ variables (like you did with `text_lc` above) to see if they contain the values 
 
 Delete the `breakpoint()` when you no longer need it.
 
+Your course `quick-reference` folder contains a `PDB.pdf` cheatsheet listing common Python debugger commands.
+
 ## Part 4 - Create and fill out the `description_parser.py`
 
 Now that we have line-cleaning functions in `text_parsing_functions.py` let's import
