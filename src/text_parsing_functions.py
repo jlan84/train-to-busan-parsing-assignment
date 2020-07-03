@@ -40,7 +40,8 @@ def remove_punctuation(text, punctuation=punctuation):
     >>> remove_punctuation("here's johnny!")
     'heres johnny'
     '''
-    pass
+    text_np = ''.join([ch for ch in text if ch not in punctuation])
+    return text_np
 
 
 def remove_newline(text):
@@ -59,7 +60,7 @@ def remove_newline(text):
     >>> remove_newline("\nlife happens when youre busy\n making other plans\n")
     'life happens when youre busy making other plans'
     '''
-    pass
+    return text.replace('\n',' ')
 
 
 def split_text_into_words(text):
@@ -78,7 +79,7 @@ def split_text_into_words(text):
     >>> split_text_into_words("get started by stop talking and begin doing")
     ['get', 'started', 'by', 'stop', 'talking', 'and', 'begin', 'doing']
     '''
-    pass
+    return text.split(' ')
 
 
 def remove_stopwords(word_lst, stopwords_set):
@@ -98,7 +99,8 @@ def remove_stopwords(word_lst, stopwords_set):
     >>> remove_stopwords(['tell', 'me', 'and', 'i', 'forget'], set(['and', 'i']))
     ['tell', 'me', 'forget']
     '''
-    pass
+    words_nsw = [word for word in word_lst if word not in stopwords_set]
+    return words_nsw
 
 
 def replace_names(word_lst, name_set, replacement_val):
@@ -121,7 +123,8 @@ def replace_names(word_lst, name_set, replacement_val):
     >>> replace_names(['daryl', 'daryl'], set(['larry', 'darryl']), 'person')
     ['person', 'person']
     '''
-    pass
+    no_names = [replacement_val if word in name_set else word for word in word_lst]
+    return no_names
 
 
 def create_cleaned_textline_from_words(words):
@@ -140,7 +143,8 @@ def create_cleaned_textline_from_words(words):
     >>> create_cleaned_textline_from_words(['darkest', 'moments', 'focus', 'light'])
     'darkest moments focus light'
     '''
-    pass
+    clean_text = ' '.join(words)
+    return clean_text
 
 
 def line_cleaning_pipeline(text, stopwords_set, name_set, replace_val):
@@ -155,14 +159,15 @@ def line_cleaning_pipeline(text, stopwords_set, name_set, replace_val):
     return line_of_text_cleaned
 
 
+
 if __name__ == '__main__':
     # to help test functions and pipeline:
     text_str1 = "Seok-woo, a divorced fund manager, is a workaholic and absentee father to \nhis"
     text_str2 = "young daughter, Su-an. For her birthday the next day, she wishes for her father\n"
     text_str3 = "to take her to Busan to see her mother. \nThey board the KTX at Seoul Station."
-
+    name_set = {'seokwoo'}
     # your code below
     text = text_str1
-    text_lc = lowercase_text(text)
-    print(f"Original: {text}")
-    print(f"Lowercased: {text_lc}.")
+    names = set(['suan', 'seongkyeong', 'yonsuk', 'seokwoo', 'ingil', 'yonghuk'
+                 'jinhee'])
+    print(line_cleaning_pipeline(text, stopwords, names, 'person'))
